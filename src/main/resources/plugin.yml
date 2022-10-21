@@ -1,4 +1,4 @@
-name: cheaper-netherite-repair
+name: xray-toggle
 version: '${project.version}'
-main: net.bingecraft.cheaper_netherite_repair.Plugin
+main: net.bingecraft.xray_toggle.Plugin
 api-version: 1.19
