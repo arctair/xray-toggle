@@ -9,5 +9,8 @@ public final class Plugin extends JavaPlugin {
     FileConfiguration config = getConfig();
     config.options().copyDefaults(true);
     saveConfig();
+
+    getCommand("xray").setExecutor(new CommandXray(this));
+    getServer().getPluginManager().registerEvents(new PlayerLogoutListener(this), this);
   }
 }

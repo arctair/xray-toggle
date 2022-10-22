@@ -2,3 +2,7 @@ name: xray-toggle
 version: '${project.version}'
 main: net.bingecraft.xray_toggle.Plugin
 api-version: 1.19
+commands:
+  xray:
+    description: "toggle xray"
+    usage: "/xray"

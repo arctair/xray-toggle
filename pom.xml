@@ -6,7 +6,7 @@
 
     <groupId>net.bingecraft</groupId>
     <artifactId>xray-toggle</artifactId>
-    <version>27</version>
+    <version>28</version>
     <packaging>jar</packaging>
 
     <name>xray-toggle</name>
