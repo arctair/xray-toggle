@@ -7,14 +7,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.metadata.FixedMetadataValue;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class CommandXray implements CommandExecutor {
   private final Plugin plugin;
+  private final String xrayResourcePack;
+  private final String nothingResourcePack;
 
-  public CommandXray(Plugin plugin) {
+  public CommandXray(Plugin plugin, String xrayResourcePack, String nothingResourcePack) {
     this.plugin = plugin;
+    this.xrayResourcePack = xrayResourcePack;
+    this.nothingResourcePack = nothingResourcePack;
   }
 
   @Override
@@ -23,10 +24,10 @@ public class CommandXray implements CommandExecutor {
     Player player = (Player) commandSender;
     if (player.getMetadata("xray").size() > 0) {
       player.removeMetadata("xray", plugin);
-      player.setResourcePack("https://static.planetminecraft.com/files/resource_media/texture/nothing.zip");
+      player.setResourcePack(nothingResourcePack);
     } else {
       player.setMetadata("xray", new FixedMetadataValue(plugin, true));
-      player.setResourcePack("https://mediafilez.forgecdn.net/files/3904/15/Xray_Ultimate_1.19_v4.2.3.zip");
+      player.setResourcePack(xrayResourcePack);
     }
     return true;
   }
